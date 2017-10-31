@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">  
+    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12" *ngFor="let user of users">
+      <div class="card">
+        <div class="card-header">
+          {{user.name}}
+        </div>
+        <div class="card-block">
+          <div class="card-media-block">
+            <div class="card-media-description">
+              <span class="card-media-title">
+                  <b>Username</b> : {{user.username}}
+              </span>
+              <span class="card-media-text">
+                  <b>Phone</b> : {{user.phone}}
+              </span>
+              <span class="card-media-text">
+                  <b>Email</b> : {{user.email}}
+              </span>
+              <span class="card-media-text">
+                  <b>Website</b> : {{user.website}}
+              </span>
+              <span class="card-media-text">
+                  <b>address</b> : {{user.address.street+','+user.address.suite+','+user.address.city+','+ user.address.zipcode}}
+              </span>
+              <hr/>
+              <span class="card-media-text">
+                  <b>Company Details</b>
+              </span>
+              <span class="card-media-text">
+                  Name: {{user.company.name}}
+              </span>
+              <span class="card-media-text">
+                  About: {{user.company.bs + user.company.catchPhrase}}
+              </span>
+            </div> 
+          </div>
+        </div>
+        <div class="card-footer">
+            <a routerLink={{view-todos}} (click)="viewTodos(user.id)"><button class="btn btn-sm btn-link">View Todos</button></a>
+        </div>
+      </div>
+    </div>
+  </div>  
+</div>
